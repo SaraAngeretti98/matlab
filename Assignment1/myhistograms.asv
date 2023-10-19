@@ -13,18 +13,19 @@ myimagefamily = imread("..\Lab1\family.jpg");
 myhFamily= myhistogram(myimagefamily);
 mychFamily= mycumulativehist(myimagefamily);
 
+
 figure,
 subplot(4,3,1), imshow(myimagehorse), title("Original image");
 subplot(4,3,4), histeq(myimagehorse), title("MatLab Eq Image");
 subplot(4,3,7), bar([0:1:255], myhHorse), title("My Normalized Histogram");
 subplot(4,3,10), bar([0:1:255], mychHorse), title("My Cumulative Histogram");
 
-subplot(4,3,2), imshow(myimageclouds), title("Original image");
+subplot(4,3,2), imshow(myimageclouds);
 subplot(4,3,5), histeq(myimageclouds), title("MatLab Eq Image");
 subplot(4,3,8), bar([0:1:255], myhClouds), title("My Normalized Histogram");
 subplot(4,3,11), bar([0:1:255], mychClouds), title("My Cumulative Histogram");
 
-subplot(4,3,3), imshow(myimagefamily), title("Original image");
+subplot(4,3,3), imshow(myimagefamily);
 subplot(4,3,6), histeq(myimagefamily), title("MatLab Eq Image");
 subplot(4,3,9), bar([0:1:255], myhFamily), title("My Normalized Histogram");
 subplot(4,3,12), bar([0:1:255], mychFamily), title("My Cumulative Histogram");
