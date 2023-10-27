@@ -12,6 +12,6 @@ figure,imshow(mask_clouds);
 moon_not_clouds = moon.*(1-mask_clouds);
 figure,imshow(moon_not_clouds);
 
-out = moon_not_clouds + clouds_resized;
-figure,imshow(out);
+out2 = moon_not_clouds + clouds_resized;
+figure,imshow(out2);
 

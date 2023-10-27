@@ -17,12 +17,12 @@ myeqFamily = equalize_image(myimagefamily);
 
 
 figure(1),
-subplot(3,3,1), imshow(myimagehorse), title("Original image");
-subplot(3,3,2), bar([0:255], myhHorse), title("My Normalized Histogram");
-subplot(3,3,3), bar([0:255], mychHorse), title("My Cumulative Histogram");
+subplot(3,5,1), imshow(myimagehorse), title("Original image");
+subplot(3,5,2), bar([0:255], myhHorse), title("My Normalized Histogram");
+subplot(3,5,3), bar([0:255], mychHorse), title("My Cumulative Histogram");
 
-subplot(3,3,4), imshow(myimageclouds), title("Original image");
-subplot(3,3,5), bar([0:255], myhClouds), title("My Normalized Histogram");
+subplot(3,5,4), imshow(myimageclouds), title("Original image");
+subplot(3,5,5), bar([0:255], myhClouds), title("My Normalized Histogram");
 subplot(3,3,6), bar([0:255], mychClouds), title("My Cumulative Histogram");
 
 subplot(3,3,7), imshow(myimagefamily), title("Original image");
@@ -60,7 +60,7 @@ function out_eqim = equalize_image(image)
     eq_im = image;
     c_hist = mycumulativehist(image);
     for k = 1:256
-        eq_im(k) = (k-1)*c_hist(k);
+        eq_im(k) = 255*c_hist(k);
     end
     out_eqim = eq_im;
 end
