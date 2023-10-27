@@ -1,0 +1,17 @@
+clear all;
+close all;
+
+im1 = im2double(imread("lawrence1.png"));
+im2 = im2double(imread("lawrence2.png"));
+
+G = fspecial('gaussian', 21, 4);
+
+filtered = imfilter(glamor, G);
+
+out = glamor + filtered;%*0.5;
+
+figure, 
+subplot(1,2,1), imshow(glamor), title("Original");
+subplot(1,3,2), imshow(filtered), title("Filtered");
+subplot(1,3,3), imshow(out), title("Somma");
+

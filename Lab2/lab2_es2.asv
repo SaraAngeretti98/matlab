@@ -1,0 +1,10 @@
+close all;
+clear all;
+
+cat0 = im2double(imread("cat.jpg"));
+
+figure,imshow(cat0);
+
+F5 = fspecial("average",5);
+
+cat5 = imfilter(cat0,F5);

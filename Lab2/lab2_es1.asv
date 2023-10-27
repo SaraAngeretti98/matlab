@@ -1,0 +1,22 @@
+close all;
+clear all;
+
+im = im2double(imread('contrast.jpg'));
+
+crop = im(360:419,1:505);
+
+imhist(crop);
+
+%calcoliamo la media dei valori della regione crop
+media = mean(crop(:));
+%deviazione standard
+devstd = std(crop(:));
+%creo la soglia, con la somma perché voglio i valori di là qualsiasi cosa
+%voglia dire
+%k = 3
+T = media + 3 * devstd;
+
+%due maschere
+light = im > T;
+dark =
+
